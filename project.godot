@@ -28,7 +28,6 @@ _global_script_class_icons={
 
 config/name="AYYYYYY"
 run/main_scene="res://Scenes/Basic.tscn"
-config/icon="res://Res/icon.png"
 
 [input]
 

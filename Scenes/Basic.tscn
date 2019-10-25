@@ -6,8 +6,8 @@
 [ext_resource path="res://Scenes/Wall/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
@@ -94,9 +94,9 @@ position = Vector2( 125.229, 149.784 )
 [node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 6 )]
 position = Vector2( 751.375, 174.339 )
 
-[node name="Player" parent="Level" instance=ExtResource( 7 )]
+[node name="Goal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 825.07, 193.741 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 140.838, 233.671 )
 startsBlack = true
-
-[node name="Goal" parent="Level" instance=ExtResource( 8 )]
-position = Vector2( 825.07, 193.741 )
