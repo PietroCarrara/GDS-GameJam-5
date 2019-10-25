@@ -5,7 +5,7 @@ var portalA;
 var portalB;
 
 # Switch all colors of the scene
-signal SwitchAllExcept(n);
+signal SwitchAllExcept(n)
 
 func _ready():
 	var children = get_children();
