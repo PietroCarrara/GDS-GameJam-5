@@ -1,5 +1,6 @@
 extends Node2D
 
+export var winUI: PackedScene;
 export var nextLevel: PackedScene;
 	
 func _ready():
@@ -33,7 +34,10 @@ func changeColors(n, except):
 # 	- Exit
 # 	- NextLevel
 func win():
-	print('You win!');
+	var ui = winUI.instance();
+	ui.rect_size = Vector2(1024, 600);
+	self.add_child(ui);
+	print('You win!!!');
 	
 func restart():
 	pass
