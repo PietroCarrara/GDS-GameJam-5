@@ -11,3 +11,10 @@ func _process(delta):
 		for body in bodies:
 			if body.name != "Player": continue;
 			emit_signal("Teleport", body);
+
+func getWall():
+	var bodies = area.get_overlapping_bodies();
+	for body in bodies:
+		if body.name != "Player":
+			return body;
+	return null;
