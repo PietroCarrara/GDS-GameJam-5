@@ -1,6 +1,9 @@
 extends Node
 
-onready var parent : CanvasItem = $".."
+const BLACK_LAYER = 2;
+const WHITE_LAYER = 1;
+
+onready var parent : PhysicsBody2D = $".."
 export var isBlack : bool = false
 
 func _ready():
@@ -12,6 +15,10 @@ func switchColor():
 
 func applyColor():
 	if isBlack:
+		parent.collision_layer = BLACK_LAYER; # Is black
+		parent.collision_mask = BLACK_LAYER; # Collides with black
 		parent.modulate = Color.black;
 	else:
+		parent.collision_layer = WHITE_LAYER; # Is white
+		parent.collision_mask = WHITE_LAYER; # Collides with white
 		parent.modulate = Color.white;

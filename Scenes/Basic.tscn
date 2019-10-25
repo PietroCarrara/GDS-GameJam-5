@@ -1,31 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/test.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ColorSwitcher/ColorSwitcher.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/test.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 142.524, 81.1013 )
 
 [node name="Basic" type="Node2D"]
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 455.749, 281.727 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 1 )
 
-[node name="ColorSwitcher" parent="icon" instance=ExtResource( 3 )]
-isBlack = true
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource( 2 )
-
-[node name="SwitchingWall" parent="Node" instance=ExtResource( 4 )]
+[node name="SwitchingWall" parent="Node2D" instance=ExtResource( 2 )]
 position = Vector2( 734.395, 353.958 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/SwitchingWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/SwitchingWall"]
 shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]

@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 onready var sprite: Sprite = $"Sprite";
 onready var collisionShape: CollisionShape2D = $"CollisionShape2D";
