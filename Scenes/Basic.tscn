@@ -28,11 +28,10 @@ extents = Vector2( 36.4727, 126.671 )
 winUI = ExtResource( 2 )
 
 [node name="TestSwitch3" type="Node2D" parent="Level"]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="SwitchingWall" parent="Level/TestSwitch3" instance=ExtResource( 4 )]
-position = Vector2( 171.848, 189.04 )
+position = Vector2( 173.799, 189.04 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/TestSwitch3/SwitchingWall"]
 shape = SubResource( 1 )
