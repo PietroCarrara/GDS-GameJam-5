@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AYYYYYY"
-run/main_scene="res://Scenes/Basic.tscn"
+run/main_scene="res://Scenes/Levels/Level0.tscn"
 config/icon="res://Res/icon.png"
 
 [input]
