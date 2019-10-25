@@ -6,6 +6,8 @@ onready var sprite: Sprite = $"Sprite";
 onready var collisionShape: CollisionShape2D = $"CollisionShape2D";
 
 func _ready():
+	add_to_group("Walls");
+	
 	var rect: RectangleShape2D = collisionShape.shape
 	
 	var wallSize = rect.extents
