@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/test.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ColorSwitcher/ColorSwitcher.tscn" type="PackedScene" id=3]
+
+[node name="Basic" type="Node2D"]
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 455.749, 281.727 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorSwitcher" parent="icon" instance=ExtResource( 3 )]
