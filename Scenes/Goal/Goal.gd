@@ -6,8 +6,6 @@ func _ready():
 	area.connect("body_entered", self, "bodyEntered");
 
 func bodyEntered(b):
-	print('Wooow');
-	print(b.name);
 	if b.name == "Player" && !getWallColor().isBlack:
 		print('You Win!');
 
