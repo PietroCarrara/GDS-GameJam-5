@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/Win/Win.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 180.987, 131.161 )
+
+[node name="Root" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource( 1 )]
+winUI = ExtResource( 2 )
+
+[node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 857.22, 270 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 505.978, 270 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 154.073, 270 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
+shape = SubResource( 1 )
+
+[node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
+
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 464.085, 202.577 )
+
+[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 100.674, 338.856 )
+
+[node name="Goal" parent="Level" instance=ExtResource( 6 )]
+position = Vector2( 864.586, 271.395 )
+
+[node name="Player" parent="Level" instance=ExtResource( 7 )]
+position = Vector2( 68.227, 225.308 )
+startsBlack = true
