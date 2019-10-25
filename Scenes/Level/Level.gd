@@ -17,6 +17,10 @@ func connectNodes(node):
 	for n in node.get_children():
 		connectNodes(n);
 
+func nextLevelRequested():
+	print('Going to next level!');
+	pass
+
 func switchAllExcept(except):
 	changeColors(self, except);
 	
@@ -31,11 +35,12 @@ func changeColors(n, except):
 
 # Should load a 'Contatulations!' UI into the scene
 # It must have the options:
-# 	- Exit
 # 	- NextLevel
+# TODO: Only add element once
 func win():
 	var ui = winUI.instance();
 	ui.rect_size = Vector2(1024, 600);
+	ui.connect("NextLevelRequested", self, "nextLevelRequested");
 	self.add_child(ui);
 	print('You win!!!');
 	

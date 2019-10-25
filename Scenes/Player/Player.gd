@@ -7,11 +7,6 @@ export var startsBlack:bool = false
 func _ready():
 	$ColorSwitcher.setIsBlack(startsBlack);
 
-func _process(delta):
-	# Testing purposes
-	if Input.is_action_just_pressed("ui_accept"):
-		$ColorSwitcher.switchColor();
-
 func _physics_process(delta):
 	move_and_slide(getMovementVector());
 

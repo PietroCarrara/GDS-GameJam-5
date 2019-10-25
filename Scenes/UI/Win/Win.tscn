@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Res/Fonts/big_main_ui_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/UI/Win/Win.gd" type="Script" id=1]
+[ext_resource path="res://Res/Fonts/big_main_ui_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=3]
 
 [node name="Control" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1024.0
@@ -15,7 +17,7 @@ margin_bottom = 600.0
 margin_right = 1024.0
 margin_bottom = 298.0
 size_flags_vertical = 7
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Congratulations!
 Level Cleared!"
 align = 1
@@ -32,10 +34,11 @@ margin_bottom = 298.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
-margin_left = 382.0
+[node name="NextLevel" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+margin_left = 411.0
 margin_top = 127.0
-margin_right = 682.0
-margin_bottom = 187.0
-custom_fonts/font = ExtResource( 2 )
-text = "Próximo Nível"
+margin_right = 613.0
+margin_bottom = 170.0
+custom_fonts/font = ExtResource( 3 )
+text = "Next Level"
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer2/NextLevel" to="." method="NextLevelPressed"]
