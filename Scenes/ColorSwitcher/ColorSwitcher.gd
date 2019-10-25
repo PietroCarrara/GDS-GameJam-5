@@ -9,6 +9,10 @@ export var isBlack : bool = false
 func _ready():
 	applyColor();
 
+func setIsBlack(val):
+	isBlack = val;
+	applyColor();
+
 func switchColor():
 	isBlack = !isBlack;
 	applyColor();

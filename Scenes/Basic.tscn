@@ -1,21 +1,81 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/test.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Wall/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 142.524, 81.1013 )
+extents = Vector2( 162.39, 123.89 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 397.407, 20.9745 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 41.4498, 127.366 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 36.4727, 126.671 )
 
 [node name="Basic" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="TestSwitch3" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="SwitchingWall" parent="Node2D" instance=ExtResource( 2 )]
-position = Vector2( 734.395, 353.958 )
+[node name="SwitchingWall" parent="TestSwitch3" instance=ExtResource( 2 )]
+position = Vector2( 171.848, 189.04 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/SwitchingWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestSwitch3/SwitchingWall"]
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="TestSwitch4" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="SwitchingWall" parent="TestSwitch4" instance=ExtResource( 2 )]
+position = Vector2( 497.433, 189.04 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestSwitch4/SwitchingWall"]
+shape = SubResource( 1 )
+
+[node name="TestSwitch2" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="SwitchingWall" parent="TestSwitch2" instance=ExtResource( 2 )]
+position = Vector2( 821.511, 189.04 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestSwitch2/SwitchingWall"]
+shape = SubResource( 1 )
+
+[node name="Wall" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 499.637, 367.804 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+scale = Vector2( 1.53753, 2.65758 )
+shape = SubResource( 2 )
+
+[node name="Wall2" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 506.669, 9.15393 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+scale = Vector2( 1.53753, 2.65758 )
+shape = SubResource( 2 )
+
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( -40.5154, 186.616 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource( 3 )
+
+[node name="Wall4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1059.74, 189.671 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+shape = SubResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 140.838, 233.671 )
+startsBlack = true
