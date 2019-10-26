@@ -35,12 +35,13 @@ func ChangeLevel(level):
 	
 	var tweenNewLevel = Tween.new();
 	var tweenOldLevel = Tween.new();
-	self.add_child(tweenNewLevel);
-	self.add_child(tweenOldLevel);
+	call_deferred("add_child", tweenNewLevel);
+	call_deferred("add_child", tweenOldLevel);
 	
 	# Add the next level
 	var nextLevel = level.instance();
-	self.add_child(nextLevel);
+	nextLevel.position = Vector2(1280, 0);
+	call_deferred("add_child", nextLevel);
 	
 	tweenNewLevel.interpolate_property(
 		nextLevel,
