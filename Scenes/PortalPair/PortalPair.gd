@@ -8,7 +8,6 @@ signal SwitchAllExcept(n);
 
 func _ready():
 	var children = get_children();
-	children.invert();
 	for portal in children:
 		portals.append(portal);
 		portal.connect("Teleport", self, "teleport", [portal]);
