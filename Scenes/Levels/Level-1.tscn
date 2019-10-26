@@ -69,7 +69,7 @@ valign = 1
 
 [node name="Tutorial2" type="Node2D" parent="Level"]
 editor/display_folded = true
-position = Vector2( 498.9, 166.827 )
+position = Vector2( 565.707, 170.167 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -90,3 +90,27 @@ valign = 1
 
 [node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 9 )]
 delayTime = 3.0
+
+[node name="Tutorial3" type="Node2D" parent="Level"]
+position = Vector2( 517.272, 530.927 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Text" type="Label" parent="Level/Tutorial3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -285.0
+margin_top = -31.5
+margin_right = 285.0
+margin_bottom = 31.5
+custom_fonts/font = ExtResource( 8 )
+text = "You can use WASD or the arrow keys to move."
+align = 1
+valign = 1
+
+[node name="Fade" parent="Level/Tutorial3" instance=ExtResource( 9 )]
+delayTime = 6.0
+displayTime = 2.0
