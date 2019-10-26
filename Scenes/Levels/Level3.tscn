@@ -50,6 +50,7 @@ position = Vector2( 1043.25, 584.936 )
 shape = SubResource( 1 )
 
 [node name="SwitchingWall5" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 638.825, 384.993 )
 startsBlack = true
 
@@ -63,6 +64,7 @@ position = Vector2( 645.269, 627.092 )
 position = Vector2( 649.813, 122.692 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 7 )]
+editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 8 )]
 position = Vector2( 645.269, 381.708 )
