@@ -3,77 +3,101 @@
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Level3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 115.403, 104.724 )
+extents = Vector2( 100.88, 105.528 )
 
 [node name="Root" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Level" parent="." instance=ExtResource( 1 )]
 nextLevel = ExtResource( 2 )
-charges = 5
-
-[node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
-editor/display_folded = true
-position = Vector2( 513.555, 524.382 )
-startsBlack = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
-shape = SubResource( 1 )
-
-[node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
-editor/display_folded = true
-position = Vector2( 735.63, 524.382 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
-shape = SubResource( 1 )
-
-[node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
-editor/display_folded = true
-position = Vector2( 848.777, 279.193 )
-startsBlack = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
-shape = SubResource( 1 )
+charges = 4
 
 [node name="SwitchingWall4" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 619.554, 279.193 )
+position = Vector2( 498.83, 365.06 )
+startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall4"]
 shape = SubResource( 1 )
 
+[node name="SwitchingWall7" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 498.83, 156.921 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall7"]
+shape = SubResource( 1 )
+
 [node name="SwitchingWall5" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 389.741, 279.193 )
+position = Vector2( 298.83, 573.06 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall5"]
 shape = SubResource( 1 )
 
-[node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
+[node name="SwitchingWall6" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
+position = Vector2( 498.83, 573.06 )
 
-[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
-position = Vector2( 530.224, 521.485 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall6"]
+shape = SubResource( 1 )
 
-[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 5 )]
-position = Vector2( 841.641, 299.508 )
-
-[node name="PortalPair2" parent="Level" instance=ExtResource( 4 )]
+[node name="SwitchingWall12" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
+position = Vector2( 890, 364.088 )
 
-[node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 5 )]
-position = Vector2( 608.463, 286.554 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall12"]
+shape = SubResource( 1 )
 
-[node name="Portal2" parent="Level/PortalPair2" instance=ExtResource( 5 )]
-position = Vector2( 363.302, 277.962 )
+[node name="SwitchingWall14" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 890, 572.088 )
+startsBlack = true
 
-[node name="Goal" parent="Level" instance=ExtResource( 6 )]
-position = Vector2( 731.285, 528.186 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall14"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 298.83, 366.42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall8" parent="Level" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 298.83, 155.479 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall8"]
+shape = SubResource( 1 )
+
+[node name="Goal2" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 886.034, 365.021 )
+
+[node name="PortalPair" parent="Level" instance=ExtResource( 5 )]
+
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 6 )]
+position = Vector2( 880.718, 588.564 )
+
+[node name="Portal3" parent="Level/PortalPair" instance=ExtResource( 6 )]
+position = Vector2( 509.867, 593.441 )
+
+[node name="PortalPair2" parent="Level" instance=ExtResource( 5 )]
+
+[node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 6 )]
+position = Vector2( 318.828, 167.432 )
+
+[node name="Portal3" parent="Level/PortalPair2" instance=ExtResource( 6 )]
+position = Vector2( 308.53, 371.698 )
 
 [node name="Player" parent="Level" instance=ExtResource( 7 )]
-position = Vector2( 445.326, 527.121 )
+position = Vector2( 305.401, 367.975 )
+startsBlack = true
