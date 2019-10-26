@@ -1,16 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/UI/Win/Win.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Levels/Level1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=10]
-[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Levels/Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
@@ -19,16 +19,15 @@ extents = Vector2( 162.39, 123.89 )
 script = ExtResource( 1 )
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
-winUI = ExtResource( 3 )
-nextLevel = ExtResource( 4 )
+nextLevel = ExtResource( 3 )
 
-[node name="SwitchingWall" parent="Level" instance=ExtResource( 5 )]
+[node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 307.732, 294.273 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
 shape = SubResource( 1 )
 
-[node name="SwitchingWall2" parent="Level" instance=ExtResource( 5 )]
+[node name="SwitchingWall2" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 631.366, 294.273 )
 startsBlack = true
@@ -36,25 +35,25 @@ startsBlack = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
 shape = SubResource( 1 )
 
-[node name="SwitchingWall3" parent="Level" instance=ExtResource( 5 )]
+[node name="SwitchingWall3" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 955.444, 294.273 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
 shape = SubResource( 1 )
 
-[node name="PortalPair" parent="Level" instance=ExtResource( 6 )]
+[node name="PortalPair" parent="Level" instance=ExtResource( 5 )]
 
-[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 7 )]
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 6 )]
 position = Vector2( 266.528, 247.651 )
 
-[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 7 )]
+[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 6 )]
 position = Vector2( 897.585, 253.79 )
 
-[node name="Goal" parent="Level" instance=ExtResource( 8 )]
+[node name="Goal" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 1043.72, 349.311 )
 
-[node name="Player" parent="Level" instance=ExtResource( 9 )]
+[node name="Player" parent="Level" instance=ExtResource( 8 )]
 position = Vector2( 237.753, 343.851 )
 startsBlack = true
 
@@ -74,10 +73,10 @@ margin_left = -408.5
 margin_top = -18.5
 margin_right = 408.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "Pressing \"E\" can get you through portals..."
 
-[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 11 )]
+[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 10 )]
 displayTime = 2.0
 
 [node name="Tutorial2" type="Node2D" parent="Level"]
@@ -96,9 +95,9 @@ margin_left = -541.5
 margin_top = -18.5
 margin_right = 541.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 9 )
 text = "But be carreful! They can change things you don't want..."
 
-[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 11 )]
+[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 10 )]
 delayTime = 4.0
 displayTime = 2.0

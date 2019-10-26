@@ -1,12 +1,10 @@
 extends Node2D
 
-export var winUI: PackedScene;
 export var nextLevel: PackedScene;
 
 signal ChangeLevel(level);
 	
 func _ready():
-	print('Nivel carregado!');
 	connectNodes(self);
 
 # Scans recursively for importante nodes
@@ -19,10 +17,6 @@ func connectNodes(node):
 	
 	for n in node.get_children():
 		connectNodes(n);
-
-func nextLevelRequested():
-	if nextLevel != null:
-		emit_signal("ChangeLevel", nextLevel);
 
 func switchAllExcept(except):
 	changeColors(self, except);
@@ -41,10 +35,8 @@ func changeColors(n, except):
 # 	- NextLevel
 # TODO: Only add element once
 func win():
-	var ui = winUI.instance();
-	ui.rect_size = Vector2(1280, 720);
-	ui.connect("NextLevelRequested", self, "nextLevelRequested");
-	self.add_child(ui);
+	if nextLevel != null:
+		emit_signal("ChangeLevel", nextLevel);
 	# Goal sound effect
 	$AudioStreamPlayer.play();
 
