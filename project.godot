@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Negativo"
-run/main_scene="res://Scenes/Levels/Level5.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Res/Negativo.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

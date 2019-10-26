@@ -114,6 +114,7 @@ position = Vector2( 1051.88, 598.418 )
 position = Vector2( 386.731, 167.512 )
 
 [node name="Text" type="Node2D" parent="Level"]
+editor/display_folded = true
 position = Vector2( 712.361, 57.6455 )
 __meta__ = {
 "_edit_group_": true

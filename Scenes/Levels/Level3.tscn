@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Level4.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 115.403, 104.724 )
@@ -77,3 +79,36 @@ position = Vector2( 731.285, 528.186 )
 
 [node name="Player" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 445.326, 527.121 )
+
+[node name="Text" type="Node2D" parent="Level"]
+editor/display_folded = true
+position = Vector2( 361.406, 54.321 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Text"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "One step forwards..."
+
+[node name="Fade" parent="Level/Text" instance=ExtResource( 9 )]
+transitionTime = 2.0
+displayTime = 2.0
+
+[node name="Text2" type="Node2D" parent="Level"]
+position = Vector2( 608.878, 99.7504 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Text2"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Two backwards."
+
+[node name="Fade" parent="Level/Text2" instance=ExtResource( 9 )]
+delayTime = 2.0
+transitionTime = 2.0

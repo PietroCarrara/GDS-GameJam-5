@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Level5.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 228.302, 161.481 )
@@ -88,3 +90,51 @@ position = Vector2( 222.663, 177.222 )
 
 [node name="Player" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 645.269, 627.092 )
+
+[node name="Text" type="Node2D" parent="Level"]
+editor/display_folded = true
+position = Vector2( 243.112, 364.444 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Text"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -18.5
+margin_right = 228.0
+margin_bottom = 18.5
+custom_fonts/font = ExtResource( 8 )
+text = "Can you see the cycle..."
+
+[node name="Fade" parent="Level/Text" instance=ExtResource( 9 )]
+delayTime = 1.0
+transitionTime = 2.0
+displayTime = 3.0
+
+[node name="Text2" type="Node2D" parent="Level"]
+editor/display_folded = true
+position = Vector2( 1036.07, 366.532 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Text2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -18.5
+margin_right = 228.0
+margin_bottom = 18.5
+custom_fonts/font = ExtResource( 8 )
+text = "And stop it?"
+align = 1
+
+[node name="Fade" parent="Level/Text2" instance=ExtResource( 9 )]
+delayTime = 3.0
+displayTime = 2.0
