@@ -45,7 +45,8 @@ func win():
 	ui.rect_size = Vector2(1280, 720);
 	ui.connect("NextLevelRequested", self, "nextLevelRequested");
 	self.add_child(ui);
-	print('You win!!!');
+	$AudioStreamPlayer.play();
+
 	
 func restart():
 	pass

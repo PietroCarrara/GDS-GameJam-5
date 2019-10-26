@@ -11,6 +11,7 @@ func _process(delta):
 		for body in bodies:
 			if body.name != "Player": continue;
 			emit_signal("Teleport", body);
+			$AudioStreamPlayer.play();
 
 func getWall():
 	var bodies = area.get_overlapping_bodies();

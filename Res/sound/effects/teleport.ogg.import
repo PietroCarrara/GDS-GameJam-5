@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/teleport.ogg-a9c37146ec37f77d3404f8458984891d.oggstr"
+
+[deps]
+
+source_file="res://Res/sound/effects/teleport.ogg"
+dest_files=[ "res://.import/teleport.ogg-a9c37146ec37f77d3404f8458984891d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

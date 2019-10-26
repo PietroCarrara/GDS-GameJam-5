@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Res/sound/stage.ogg" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
@@ -56,5 +57,9 @@ position = Vector2( 751.375, 174.339 )
 position = Vector2( 825.07, 193.741 )
 
 [node name="Player" parent="Level" instance=ExtResource( 9 )]
-position = Vector2( 103.82, 238.618 )
+position = Vector2( 897.133, 250.074 )
 startsBlack = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
