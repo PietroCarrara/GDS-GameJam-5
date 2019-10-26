@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
 
 [node name="Root" type="Node2D" groups=[
@@ -23,11 +23,10 @@ winUI = ExtResource( 3 )
 nextLevel = ExtResource( 4 )
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 173.799, 189.04 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="SwitchingWall2" parent="Level" instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -35,14 +34,14 @@ position = Vector2( 497.433, 189.04 )
 startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="SwitchingWall3" parent="Level" instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 821.511, 189.04 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 6 )]
 editor/display_folded = true
@@ -59,4 +58,3 @@ position = Vector2( 825.07, 193.741 )
 [node name="Player" parent="Level" instance=ExtResource( 9 )]
 position = Vector2( 103.82, 238.618 )
 startsBlack = true
-[connection signal="ChangeLevel" from="Level" to="." method="ChangeLevel"]
