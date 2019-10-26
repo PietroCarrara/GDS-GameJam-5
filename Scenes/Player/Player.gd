@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 200.0;
+const SPEED = 300.0;
 export var startsBlack:bool = false;
 
 signal PlayerColorChanged(color);
