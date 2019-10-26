@@ -55,6 +55,7 @@ position = Vector2( 389.741, 279.193 )
 shape = SubResource( 1 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
 position = Vector2( 530.224, 521.485 )
@@ -63,6 +64,7 @@ position = Vector2( 530.224, 521.485 )
 position = Vector2( 841.641, 299.508 )
 
 [node name="PortalPair2" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 5 )]
 position = Vector2( 608.463, 286.554 )
