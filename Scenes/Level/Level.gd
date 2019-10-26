@@ -1,7 +1,6 @@
 extends Node2D
 
 export var nextLevel: PackedScene;
-
 export var charges: int;
 
 signal ChangeLevel(level);
@@ -42,6 +41,9 @@ func win():
 	$Goal.play();
 	if nextLevel != null:
 		emit_signal("ChangeLevel", nextLevel);
+	else:
+		var endingScreen = load("res://Scenes/EndingScreen.tscn");
+		emit_signal("ChangeLevel", endingScreen);
 
 func restart():
 	var scene = load(self.owner.filename);

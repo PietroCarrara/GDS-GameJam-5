@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Levels/Level-1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Res/Fonts/big_main_ui_font.tres" type="DynamicFont" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 287.413, 86.3286 )
+
+[node name="EndingScreen" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource( 1 )]
+nextLevel = ExtResource( 2 )
+charges = 1
+
+[node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 640, 541.252 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 593.174, 846.368 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
+shape = SubResource( 1 )
+
+[node name="Goal" parent="Level/SwitchingWall2" instance=ExtResource( 4 )]
+position = Vector2( -87.9076, -1.0423 )
+
+[node name="PortalPair" parent="Level" instance=ExtResource( 5 )]
+
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 6 )]
+position = Vector2( 507.01, 840.877 )
+
+[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 6 )]
+position = Vector2( 839.645, 541.776 )
+
+[node name="Fade" parent="Level/PortalPair/Portal2" instance=ExtResource( 7 )]
+delayTime = 4.0
+displayTime = 999.0
+
+[node name="Player" parent="Level" instance=ExtResource( 8 )]
+position = Vector2( 417.021, 542.244 )
+rotation = -0.010157
+
+[node name="Creditos" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 656.969, 111.037 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Creditos"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -441.0
+margin_top = -82.5
+margin_right = 441.0
+margin_bottom = 82.5
+custom_fonts/font = ExtResource( 9 )
+text = "Thank you so much for
+to playing my game!"
+align = 1
+
+[node name="Fade" parent="Creditos" instance=ExtResource( 7 )]
+delayTime = 1.0
+transitionTime = 2.0
+displayTime = 9999.0
+
+[node name="CreditosEsq" type="Node2D" parent="."]
+position = Vector2( 303.501, 329.41 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="CreditosEsq"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = -82.5
+margin_right = 336.0
+margin_bottom = 82.5
+custom_fonts/font = ExtResource( 9 )
+text = "Matheus Krenn"
+align = 1
+
+[node name="Fade" parent="CreditosEsq" instance=ExtResource( 7 )]
+delayTime = 3.0
+displayTime = 999.0
+
+[node name="CreditosDir" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 962.321, 323.858 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="CreditosDir"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = -82.5
+margin_right = 336.0
+margin_bottom = 82.5
+custom_fonts/font = ExtResource( 9 )
+text = "Pietro Carrara"
+align = 1
+
+[node name="Fade" parent="CreditosDir" instance=ExtResource( 7 )]
+delayTime = 3.0
+displayTime = 999.0

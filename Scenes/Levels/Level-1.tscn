@@ -41,7 +41,6 @@ position = Vector2( 488.406, 365.543 )
 startsBlack = true
 
 [node name="Tutorial" type="Node2D" parent="Level"]
-editor/display_folded = true
 position = Vector2( 350.851, 123.971 )
 __meta__ = {
 "_edit_group_": true
