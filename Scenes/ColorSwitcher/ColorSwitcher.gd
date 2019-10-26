@@ -3,6 +3,8 @@ extends Node
 const BLACK_LAYER = 2;
 const WHITE_LAYER = 1;
 
+signal ColorChanged();
+
 onready var parent : PhysicsBody2D = $".."
 export var isBlack : bool = false
 
@@ -18,6 +20,7 @@ func switchColor():
 	applyColor();
 
 func applyColor():
+	emit_signal("ColorChanged");
 	if isBlack:
 		parent.collision_layer = BLACK_LAYER; # Is black
 		parent.collision_mask = BLACK_LAYER; # Collides with black

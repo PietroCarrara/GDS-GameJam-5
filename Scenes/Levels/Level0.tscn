@@ -11,7 +11,6 @@
 [ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
 
@@ -22,6 +21,7 @@ script = ExtResource( 1 )
 nextLevel = ExtResource( 3 )
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 307.732, 294.273 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
@@ -43,6 +43,7 @@ position = Vector2( 955.444, 294.273 )
 shape = SubResource( 1 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 5 )]
+editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 6 )]
 position = Vector2( 266.528, 247.651 )
