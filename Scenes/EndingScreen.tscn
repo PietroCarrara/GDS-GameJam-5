@@ -80,6 +80,7 @@ transitionTime = 2.0
 displayTime = 9999.0
 
 [node name="CreditosEsq" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 303.501, 329.41 )
 __meta__ = {
 "_edit_group_": true
@@ -127,6 +128,7 @@ delayTime = 3.0
 displayTime = 999.0
 
 [node name="SoundImageOrd" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 639.739, 680.994 )
 __meta__ = {
 "_edit_group_": true

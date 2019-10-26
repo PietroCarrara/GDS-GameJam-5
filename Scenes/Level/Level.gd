@@ -4,7 +4,10 @@ export var nextLevel: PackedScene;
 export var charges: int;
 
 signal ChangeLevel(level);
-	
+
+# Has a reference to all the goals in the scene
+var goals = [];
+
 func _ready():
 	find_node("Player").setCharges(charges);
 	connectNodes(self);
@@ -19,6 +22,7 @@ func connectNodes(node):
 	if node is PortalPair:
 		node.connect("SwitchAllExcept", self, "switchAllExcept");
 	elif node is Goal:
+		goals.append(node);
 		node.connect("Win", self, "win");
 	
 	for n in node.get_children():
@@ -36,7 +40,14 @@ func changeColors(n, except):
 		if (child.name == "ColorSwitcher"):
 			child.switchColor();
 
-func win():
+func win(goal):
+	goals.erase(goal);
+	
+	# Only win when all the goals have
+	# been collected
+	if goals.size() > 0:
+		return;
+	
 	# Goal sound effect
 	$Goal.play();
 	if nextLevel != null:
@@ -48,4 +59,4 @@ func win():
 func restart():
 	var scene = load(self.owner.filename);
 	emit_signal("ChangeLevel", scene);
-	
+

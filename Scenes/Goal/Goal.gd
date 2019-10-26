@@ -3,7 +3,7 @@ extends Node2D
 
 onready var area = $Area2D;
 
-signal Win();
+signal Win(goal);
 
 func _ready():
 	area.connect("body_entered", self, "bodyEntered");
@@ -11,7 +11,7 @@ func _ready():
 func bodyEntered(b):
 	# Player can't win if the back is black
 	if b.name == "Player" && !getWallColor().isBlack:
-		emit_signal("Win");
+		emit_signal("Win", self);
 		# remove goal from scene
 		self.call_deferred("free");
 

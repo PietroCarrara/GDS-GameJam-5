@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 129.439, 121.146 )
@@ -100,6 +102,7 @@ position = Vector2( 764.598, 358.809 )
 position = Vector2( 263.411, 577.228 )
 
 [node name="PortalPair2" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 5 )]
 position = Vector2( 740.213, 591.013 )
@@ -109,3 +112,18 @@ position = Vector2( 1051.88, 598.418 )
 
 [node name="Player" parent="Level" instance=ExtResource( 6 )]
 position = Vector2( 386.731, 167.512 )
+
+[node name="Text" type="Node2D" parent="Level"]
+position = Vector2( 712.361, 57.6455 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Text"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 7 )
+text = "Now... can you get them both?"
+
+[node name="Fade" parent="Level/Text" instance=ExtResource( 8 )]
+displayTime = 2.0
