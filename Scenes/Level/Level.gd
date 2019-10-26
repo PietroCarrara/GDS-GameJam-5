@@ -3,7 +3,7 @@ extends Node2D
 export var nextLevel: PackedScene;
 export var charges: int;
 
-signal ChangeLevel(level);
+signal ChangeLevel(level, slidingPos);
 
 # Has a reference to all the goals in the scene
 var goals = [];
@@ -51,12 +51,12 @@ func win(goal):
 	# Goal sound effect
 	$Goal.play();
 	if nextLevel != null:
-		emit_signal("ChangeLevel", nextLevel);
+		emit_signal("ChangeLevel", nextLevel, Vector2(1280, 0));
 	else:
 		var endingScreen = load("res://Scenes/EndingScreen.tscn");
-		emit_signal("ChangeLevel", endingScreen);
+		emit_signal("ChangeLevel", endingScreen, Vector2(1280, 0));
 
 func restart():
 	var scene = load(self.owner.filename);
-	emit_signal("ChangeLevel", scene);
+	emit_signal("ChangeLevel", scene, Vector2(0, 720));
 

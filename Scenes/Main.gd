@@ -27,7 +27,7 @@ func fadeInSoundtrack():
 	
 	tween.start();
 
-func ChangeLevel(level):
+func ChangeLevel(level, slidingPos):
 	if isRemoving:
 		return;
 	
@@ -40,13 +40,13 @@ func ChangeLevel(level):
 	
 	# Add the next level
 	var nextLevel = level.instance();
-	nextLevel.position = Vector2(1280, 0);
+	nextLevel.position = slidingPos;
 	call_deferred("add_child", nextLevel);
 	
 	tweenNewLevel.interpolate_property(
 		nextLevel,
 		"position",
-		Vector2(1280, 0),
+		slidingPos,
 		Vector2(0, 0),
 		1,
         Tween.TRANS_QUAD,
@@ -56,7 +56,7 @@ func ChangeLevel(level):
 		oldLevel,
 		"position",
 		Vector2(0, 0),
-		Vector2(-1280, 0),
+		slidingPos * -1,
 		1,
         Tween.TRANS_QUAD,
 		Tween.EASE_IN_OUT

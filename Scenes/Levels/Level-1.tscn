@@ -92,6 +92,7 @@ valign = 1
 delayTime = 3.0
 
 [node name="Tutorial3" type="Node2D" parent="Level"]
+editor/display_folded = true
 position = Vector2( 517.272, 530.927 )
 __meta__ = {
 "_edit_group_": true
