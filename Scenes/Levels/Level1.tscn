@@ -63,7 +63,8 @@ startsBlack = true
 editor/display_folded = true
 position = Vector2( 453.279, 138.142 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial"]
@@ -86,7 +87,8 @@ valign = 1
 editor/display_folded = true
 position = Vector2( 735.372, 193.357 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial2"]
@@ -110,7 +112,8 @@ delayTime = 3.0
 editor/display_folded = true
 position = Vector2( 637.317, 576.652 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial3"]
@@ -135,7 +138,8 @@ displayTime = 10.0
 editor/display_folded = true
 position = Vector2( 899.88, 632.231 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial4"]

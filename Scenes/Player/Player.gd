@@ -3,8 +3,13 @@ extends KinematicBody2D
 const SPEED = 200.0;
 export var startsBlack:bool = false;
 
+signal PlayerColorChanged(color);
+
 func _ready():
 	$ColorSwitcher.setIsBlack(startsBlack);
+	emit_signal("PlayerColorChanged", $ColorSwitcher);
+	
+	$ColorSwitcher.connect("ColorChanged", self, "colorChanged");
 
 func _physics_process(delta):
 	var pos = position;
@@ -42,3 +47,6 @@ func isTotallyCovered():
 		totalArea += area_rect.clip(body_rect).get_area();
 	
 	return (body_rect.get_area() - totalArea) < 1;
+	
+func colorChanged():
+	emit_signal("PlayerColorChanged", $ColorSwitcher);

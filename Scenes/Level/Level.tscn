@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.gd" type="Script" id=1]
 [ext_resource path="res://Res/sound/effects/key.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Scenes/OptimalBonus/OptimalBonus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Res/wall.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Level/Background.gd" type="Script" id=5]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,3 +15,10 @@ stream = ExtResource( 2 )
 [node name="OptimalBonus" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10.83, 10.83 )
 z_index = 4096
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 639.719, 391.9 )
+scale = Vector2( 4.43439, 4.01397 )
+z_index = -999
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
