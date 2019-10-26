@@ -27,5 +27,3 @@ func teleport(what, portal):
 	what.position = where.position;
 	playerColor.switchColor();
 	
-	# play teleportin' sound effect
-	#$AudioStreamPlayer.play();

@@ -45,19 +45,18 @@ position = Vector2( 821.511, 189.04 )
 shape = SubResource( 1 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 6 )]
-editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 7 )]
 position = Vector2( 125.229, 149.784 )
 
 [node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 7 )]
-position = Vector2( 751.375, 174.339 )
+position = Vector2( 751.375, 142.836 )
 
 [node name="Goal" parent="Level" instance=ExtResource( 8 )]
-position = Vector2( 825.07, 193.741 )
+position = Vector2( 902.396, 242.428 )
 
 [node name="Player" parent="Level" instance=ExtResource( 9 )]
-position = Vector2( 897.133, 250.074 )
+position = Vector2( 63.7248, 264.394 )
 startsBlack = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
