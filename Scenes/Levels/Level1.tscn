@@ -18,14 +18,14 @@ winUI = ExtResource( 2 )
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 857.22, 270 )
+position = Vector2( 994.607, 393.033 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 505.978, 270 )
+position = Vector2( 643.365, 393.033 )
 startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
@@ -33,7 +33,7 @@ shape = SubResource( 1 )
 
 [node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 154.073, 270 )
+position = Vector2( 291.46, 393.033 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
 shape = SubResource( 1 )
@@ -41,14 +41,14 @@ shape = SubResource( 1 )
 [node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
-position = Vector2( 464.085, 202.577 )
+position = Vector2( 601.472, 325.61 )
 
 [node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 5 )]
-position = Vector2( 100.674, 338.856 )
+position = Vector2( 238.061, 461.889 )
 
 [node name="Goal" parent="Level" instance=ExtResource( 6 )]
-position = Vector2( 864.586, 271.395 )
+position = Vector2( 1001.97, 394.428 )
 
 [node name="Player" parent="Level" instance=ExtResource( 7 )]
-position = Vector2( 68.227, 225.308 )
+position = Vector2( 205.614, 348.341 )
 startsBlack = true
