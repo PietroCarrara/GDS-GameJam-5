@@ -2,19 +2,17 @@ extends Node2D
 
 export var nextLevel: PackedScene;
 
-export var minTeleports: int;
+export var charges: int;
 
 signal ChangeLevel(level);
 	
 func _ready():
+	find_node("Player").setCharges(charges);
 	connectNodes(self);
-	for portal in get_tree().get_nodes_in_group("portals"):
-		portal.connect("Teleport", self, "onTeleport");
-	get_node("OptimalBonus").changeNumber(minTeleports);
 
-func onTeleport(player):
-	minTeleports -= 1;
-	get_node("OptimalBonus").changeNumber(minTeleports);
+func _process(delta):
+	if (Input.is_action_just_pressed("level_restart")):
+		restart();
 
 # Scans recursively for importante nodes
 # and listens for their events
@@ -46,4 +44,6 @@ func win():
 		emit_signal("ChangeLevel", nextLevel);
 
 func restart():
-	pass
+	var scene = load(self.owner.filename);
+	emit_signal("ChangeLevel", scene);
+	

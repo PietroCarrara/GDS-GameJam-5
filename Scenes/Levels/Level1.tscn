@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/Root.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Level2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=4]
@@ -15,11 +14,10 @@
 extents = Vector2( 180.987, 131.161 )
 
 [node name="Root" type="Node2D"]
-script = ExtResource( 1 )
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
 nextLevel = ExtResource( 3 )
-minTeleports = 4
+charges = 4
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true

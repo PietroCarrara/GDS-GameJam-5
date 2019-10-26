@@ -4,11 +4,14 @@ const SPEED = 300.0;
 export var startsBlack:bool = false;
 
 signal PlayerColorChanged(color);
+signal ChargesChanged(remaining);
+
+var charges: int = 0;
 
 func _ready():
 	$ColorSwitcher.setIsBlack(startsBlack);
 	emit_signal("PlayerColorChanged", $ColorSwitcher);
-	
+
 	$ColorSwitcher.connect("ColorChanged", self, "colorChanged");
 
 func _physics_process(delta):
@@ -50,3 +53,13 @@ func isTotallyCovered():
 	
 func colorChanged():
 	emit_signal("PlayerColorChanged", $ColorSwitcher);
+	
+func setCharges(value: int):
+	charges = value;
+	emit_signal("ChargesChanged", charges);
+	
+func getCharges():
+	return charges;
+	
+func consumeCharge():
+	setCharges(getCharges()-1);

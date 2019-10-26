@@ -1,18 +1,25 @@
 # Every level should have this as a script
 extends Node2D
 
+# Tells if we are removing a level in the moment
+var isRemoving = false
+
+onready var oldLevel = $Root;
+
 func ChangeLevel(level):
+	if isRemoving:
+		return;
+	
+	isRemoving = true;
+	
 	var tweenNewLevel = Tween.new();
 	var tweenOldLevel = Tween.new();
 	self.add_child(tweenNewLevel);
 	self.add_child(tweenOldLevel);
 	
-	
 	# Add the next level
 	var nextLevel = level.instance();
 	self.add_child(nextLevel);
-	
-	var oldLevel = self.get_node("Level");
 	
 	tweenNewLevel.interpolate_property(
 		nextLevel,
@@ -33,6 +40,7 @@ func ChangeLevel(level):
 		Tween.EASE_IN_OUT
 	);
 	
+	tweenOldLevel.connect("tween_all_completed", self, "doneRemoving");
 	tweenOldLevel.connect(
 		"tween_all_completed",
 		self,
@@ -48,12 +56,21 @@ func ChangeLevel(level):
 	
 	tweenNewLevel.start();
 	tweenOldLevel.start();
+	
+	oldLevel = nextLevel;
+	listen();
 
 func removeChildren(children):
 	for child in children:
 		print(child)
 		self.remove_child(child);
 		child.call_deferred("free");
+		
+func doneRemoving():
+	isRemoving = false;
 
 func _ready():
-	$Level.connect("ChangeLevel", self, "ChangeLevel");
+	listen();
+	
+func listen():
+	oldLevel.get_node("Level").connect("ChangeLevel", self, "ChangeLevel");

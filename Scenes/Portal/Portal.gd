@@ -13,10 +13,11 @@ func _process(delta):
 		# Check if player is in the interaction zone
 		var bodies = area.get_overlapping_bodies();
 		for body in bodies:
-			if body.name != "Player": continue;
-			emit_signal("Teleport", body);
-			# Teleport sound effect
-			$AudioStreamPlayer.play();
+			if body.name == "Player" && body.getCharges() > 0:
+				body.consumeCharge();
+				emit_signal("Teleport", body);
+				# Teleport sound effect
+				$AudioStreamPlayer.play();
 			
 
 func getWall():
