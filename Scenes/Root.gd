@@ -10,3 +10,7 @@ func ChangeLevel(level):
 	# Add the next level
 	var nextLevel = level.instance();
 	self.add_child(nextLevel);
+
+func _ready():
+	$Level.connect("ChangeLevel", self, "ChangeLevel");
+	

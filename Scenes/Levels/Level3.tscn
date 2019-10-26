@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Root.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/Win/Win.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 228.302, 189.373 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 141.964, 343.874 )
+
+[node name="Root" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Level" parent="." instance=ExtResource( 2 )]
+winUI = ExtResource( 3 )
+
+[node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 234.396, 194.139 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall2" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 1047.8, 189.595 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall3" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 234.396, 584.936 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall4" parent="Level" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 1043.25, 584.936 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall4"]
+shape = SubResource( 1 )
+
+[node name="SwitchingWall5" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 638.825, 384.993 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall5"]
+shape = SubResource( 2 )
+
+[node name="Player" parent="Level" instance=ExtResource( 5 )]
+position = Vector2( 645.269, 627.092 )
+
+[node name="Goal" parent="Level" instance=ExtResource( 6 )]
+position = Vector2( 649.813, 122.692 )
+
+[node name="PortalPair" parent="Level" instance=ExtResource( 7 )]
+
+[node name="Portal4" parent="Level/PortalPair" instance=ExtResource( 8 )]
+position = Vector2( 1136.04, 667.99 )
+
+[node name="Portal3" parent="Level/PortalPair" instance=ExtResource( 8 )]
+position = Vector2( 136.324, 649.813 )
+
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 8 )]
+position = Vector2( 645.269, 381.708 )
+
+[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 8 )]
+position = Vector2( 1149.67, 95.4271 )
+
+[node name="PortalPair2" parent="Level" instance=ExtResource( 7 )]
+
+[node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 8 )]
+position = Vector2( 222.663, 177.222 )
+
+[node name="Portal2" parent="Level/PortalPair2" instance=ExtResource( 8 )]
+position = Vector2( 386.253, 468.047 )
+
+[node name="Portal3" parent="Level/PortalPair2" instance=ExtResource( 8 )]
+position = Vector2( 904.285, 299.914 )
