@@ -24,28 +24,28 @@ charges = 7
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 229.122, 160.735 )
+position = Vector2( 229, 160 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 1051.32, 159.707 )
+position = Vector2( 1055, 160 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 230.88, 558.238 )
+position = Vector2( 229, 557 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall4" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 1054.82, 557.21 )
+position = Vector2( 1055, 557 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall4"]
 shape = SubResource( 1 )

@@ -41,6 +41,7 @@ func changeColors(n, except):
 			child.switchColor();
 
 func win(goal):
+	$Goal.play();
 	goals.erase(goal);
 	
 	# Only win when all the goals have
@@ -48,8 +49,6 @@ func win(goal):
 	if goals.size() > 0:
 		return;
 	
-	# Goal sound effect
-	$Goal.play();
 	if nextLevel != null:
 		emit_signal("ChangeLevel", nextLevel, Vector2(1280, 0));
 	else:
