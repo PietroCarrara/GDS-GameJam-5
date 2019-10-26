@@ -17,6 +17,7 @@ script = ExtResource( 1 )
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
 nextLevel = ExtResource( 3 )
+minTeleports = 5
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -48,7 +49,6 @@ startsBlack = true
 shape = SubResource( 1 )
 
 [node name="SwitchingWall5" parent="Level" instance=ExtResource( 4 )]
-editor/display_folded = true
 position = Vector2( 629.641, 108.318 )
 startsBlack = true
 

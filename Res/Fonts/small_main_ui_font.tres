@@ -6,5 +6,5 @@ font_path = "res://Res/Fonts/ttfs/LiberationMono-BoldItalic.ttf"
 [resource]
 size = 32
 outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0.141176, 0.141176, 0.141176, 1 )
 font_data = SubResource( 1 )

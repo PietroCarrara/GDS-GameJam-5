@@ -4,6 +4,10 @@ onready var area = $Area2D;
 
 signal Teleport(player);
 
+func _ready():
+	add_to_group("portals");
+	
+
 func _process(delta):
 	if Input.is_action_just_pressed("player_interact"):
 		# Check if player is in the interaction zone
@@ -13,6 +17,7 @@ func _process(delta):
 			emit_signal("Teleport", body);
 			# Teleport sound effect
 			$AudioStreamPlayer.play();
+			
 
 func getWall():
 	var bodies = area.get_overlapping_bodies();

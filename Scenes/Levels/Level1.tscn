@@ -19,6 +19,7 @@ script = ExtResource( 1 )
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
 nextLevel = ExtResource( 3 )
+minTeleports = 4
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true
