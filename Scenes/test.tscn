@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100.88, 105.528 )
+
+[node name="Root" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Level" parent="." instance=ExtResource( 1 )]
+charges = 4
+
+[node name="SwitchingWall4" parent="Level" instance=ExtResource( 2 )]
+position = Vector2( 498.83, 365.06 )
+startsBlack = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall4"]
+position = Vector2( 42.8568, -179.22 )
+shape = SubResource( 1 )
+
+[node name="Goal2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 886.034, 365.021 )
+
+[node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
+
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 508.643, 372.332 )
+
+[node name="Portal3" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 509.867, 593.441 )
+
+[node name="Player" parent="Level" instance=ExtResource( 6 )]
+position = Vector2( 237.22, 319.274 )
+startsBlack = true

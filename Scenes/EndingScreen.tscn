@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Level-1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Res/Fonts/big_main_ui_font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 287.413, 86.3286 )
@@ -20,7 +21,7 @@ nextLevel = ExtResource( 2 )
 charges = 1
 
 [node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
-position = Vector2( 640, 541.252 )
+position = Vector2( 628.64, 488.994 )
 startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
@@ -42,14 +43,14 @@ position = Vector2( -87.9076, -1.0423 )
 position = Vector2( 507.01, 840.877 )
 
 [node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 6 )]
-position = Vector2( 839.645, 541.776 )
+position = Vector2( 828.285, 489.518 )
 
 [node name="Fade" parent="Level/PortalPair/Portal2" instance=ExtResource( 7 )]
 delayTime = 4.0
 displayTime = 999.0
 
 [node name="Player" parent="Level" instance=ExtResource( 8 )]
-position = Vector2( 417.021, 542.244 )
+position = Vector2( 405.661, 489.986 )
 rotation = -0.010157
 
 [node name="Creditos" type="Node2D" parent="."]
@@ -124,3 +125,29 @@ align = 1
 [node name="Fade" parent="CreditosDir" instance=ExtResource( 7 )]
 delayTime = 3.0
 displayTime = 999.0
+
+[node name="SoundImageOrd" type="Node2D" parent="."]
+position = Vector2( 639.739, 680.994 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="SoundImageOrd"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -441.0
+margin_top = -82.5
+margin_right = 441.0
+margin_bottom = 82.5
+custom_fonts/font = ExtResource( 10 )
+text = "Music/Sound Effects by Eric Matyas
+www.soundimage.org"
+align = 1
+valign = 1
+
+[node name="Fade" parent="SoundImageOrd" instance=ExtResource( 7 )]
+delayTime = 3.0
+transitionTime = 2.0
+displayTime = 9999.0
