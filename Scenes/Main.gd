@@ -6,6 +6,27 @@ var isRemoving = false
 
 onready var oldLevel = $Root;
 
+func _ready():
+	listen();	
+	fadeInSoundtrack();
+	
+func fadeInSoundtrack():
+	var tween = Tween.new();
+	self.add_child(tween);
+	
+	tween.interpolate_property(
+		$Soundtrack,
+		"volume_db",
+		$Soundtrack.volume_db,
+		-10,
+		4,
+		Tween.TRANS_LINEAR,
+		false,
+		0
+	);
+	
+	tween.start();
+
 func ChangeLevel(level):
 	if isRemoving:
 		return;
@@ -69,8 +90,5 @@ func removeChildren(children):
 func doneRemoving():
 	isRemoving = false;
 
-func _ready():
-	listen();
-	
 func listen():
 	oldLevel.get_node("Level").connect("ChangeLevel", self, "ChangeLevel");

@@ -1,68 +1,68 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Levels/Level2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Levels/Level2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 180.987, 131.161 )
 
 [node name="Root" type="Node2D"]
 
-[node name="Level" parent="." instance=ExtResource( 2 )]
-nextLevel = ExtResource( 3 )
+[node name="Level" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3.51617, 5.27423 )
+nextLevel = ExtResource( 2 )
 charges = 4
 
-[node name="SwitchingWall" parent="Level" instance=ExtResource( 4 )]
+[node name="SwitchingWall" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 988.432, 375.992 )
+position = Vector2( 974.078, 283.717 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall"]
 shape = SubResource( 1 )
 
-[node name="SwitchingWall2" parent="Level" instance=ExtResource( 4 )]
+[node name="SwitchingWall2" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 637.19, 375.992 )
+position = Vector2( 622.836, 283.717 )
 startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall2"]
 shape = SubResource( 1 )
 
-[node name="SwitchingWall3" parent="Level" instance=ExtResource( 4 )]
+[node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 285.285, 375.992 )
+position = Vector2( 270.931, 283.717 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
 shape = SubResource( 1 )
 
-[node name="PortalPair" parent="Level" instance=ExtResource( 5 )]
+[node name="PortalPair" parent="Level" instance=ExtResource( 4 )]
 editor/display_folded = true
 
-[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 6 )]
-position = Vector2( 595.297, 308.569 )
+[node name="Portal" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 580.943, 216.294 )
 
-[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 6 )]
-position = Vector2( 231.886, 444.848 )
+[node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 5 )]
+position = Vector2( 217.532, 352.573 )
 
-[node name="Goal" parent="Level" instance=ExtResource( 7 )]
-position = Vector2( 995.802, 377.387 )
+[node name="Goal" parent="Level" instance=ExtResource( 6 )]
+position = Vector2( 981.448, 285.112 )
 
-[node name="Player" parent="Level" instance=ExtResource( 8 )]
-position = Vector2( 199.439, 331.3 )
+[node name="Player" parent="Level" instance=ExtResource( 7 )]
+position = Vector2( 185.085, 239.025 )
 startsBlack = true
 
 [node name="Tutorial" type="Node2D" parent="Level"]
 editor/display_folded = true
-position = Vector2( 453.279, 138.142 )
+position = Vector2( 453.279, 56.1202 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial"]
@@ -74,19 +74,18 @@ margin_left = -427.5
 margin_top = -18.5
 margin_right = 427.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
 text = "You switch colors when you get in a portal..."
 align = 1
 valign = 1
 
-[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 10 )]
+[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 9 )]
 
 [node name="Tutorial2" type="Node2D" parent="Level"]
 editor/display_folded = true
-position = Vector2( 735.372, 193.357 )
+position = Vector2( 731.271, 121.588 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial2"]
@@ -98,20 +97,18 @@ margin_left = -427.5
 margin_top = -18.5
 margin_right = 427.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
 text = "But so do the rooms!"
 align = 1
 valign = 1
 
-[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 10 )]
+[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 9 )]
 delayTime = 3.0
 
 [node name="Tutorial3" type="Node2D" parent="Level"]
-editor/display_folded = true
-position = Vector2( 637.317, 576.652 )
+position = Vector2( 477.358, 476.565 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial3"]
@@ -123,21 +120,20 @@ margin_left = -427.5
 margin_top = -18.5
 margin_right = 427.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 9 )
-text = "If your color would match the room, it changes!"
+custom_fonts/font = ExtResource( 8 )
+text = "If your color would match the room, that room changes colors!"
 align = 1
 valign = 1
 
-[node name="Fade" parent="Level/Tutorial3" instance=ExtResource( 10 )]
+[node name="Fade" parent="Level/Tutorial3" instance=ExtResource( 9 )]
 delayTime = 6.0
 displayTime = 10.0
 
 [node name="Tutorial4" type="Node2D" parent="Level"]
 editor/display_folded = true
-position = Vector2( 899.88, 632.231 )
+position = Vector2( 1006.25, 530.092 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="Level/Tutorial4"]
@@ -149,9 +145,33 @@ margin_left = -427.5
 margin_top = -18.5
 margin_right = 427.5
 margin_bottom = 18.5
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
 text = "Else, all the other rooms change!"
 
-[node name="Fade" parent="Level/Tutorial4" instance=ExtResource( 10 )]
+[node name="Fade" parent="Level/Tutorial4" instance=ExtResource( 9 )]
+delayTime = 9.0
+displayTime = 10.0
+
+[node name="Tutorial5" type="Node2D" parent="Level"]
+position = Vector2( 768.518, 609.844 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Level/Tutorial5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -427.5
+margin_top = -18.5
+margin_right = 427.5
+margin_bottom = 18.5
+custom_fonts/font = ExtResource( 8 )
+text = "But remember, you can always restart 
+pressing \"R\" if you run out of charges!"
+align = 2
+
+[node name="Fade" parent="Level/Tutorial5" instance=ExtResource( 9 )]
 delayTime = 9.0
 displayTime = 10.0

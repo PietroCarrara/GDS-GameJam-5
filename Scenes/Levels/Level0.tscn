@@ -74,7 +74,7 @@ margin_top = -18.5
 margin_right = 408.5
 margin_bottom = 18.5
 custom_fonts/font = ExtResource( 8 )
-text = "Pressing \"E\" can get you through portals..."
+text = "Pressing \"E\" can get you through portals using a charge..."
 
 [node name="Fade" parent="Level/Tutorial" instance=ExtResource( 9 )]
 displayTime = 2.0
