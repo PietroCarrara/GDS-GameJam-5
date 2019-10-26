@@ -21,3 +21,9 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="ColorSwitcher" parent="." instance=ExtResource( 3 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="timerTimeout"]

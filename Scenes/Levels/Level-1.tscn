@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Level0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/SwitchingWall/SwitchingWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PortalPair/PortalPair.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Goal/Goal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Res/Fonts/small_main_ui_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 162.39, 123.89 )
@@ -36,7 +37,10 @@ shape = SubResource( 1 )
 [node name="Goal" parent="Level" instance=ExtResource( 5 )]
 position = Vector2( 806.853, 362.97 )
 
-[node name="Player" parent="Level" instance=ExtResource( 6 )]
+[node name="Portal" parent="Level" instance=ExtResource( 6 )]
+position = Vector2( 392.165, 364.232 )
+
+[node name="Player" parent="Level" instance=ExtResource( 7 )]
 position = Vector2( 488.406, 365.543 )
 startsBlack = true
 
@@ -56,12 +60,12 @@ margin_left = -285.0
 margin_top = -31.5
 margin_right = 285.0
 margin_bottom = 31.5
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = "Your goal is to get the key..."
 align = 1
 valign = 1
 
-[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 8 )]
+[node name="Fade" parent="Level/Tutorial" instance=ExtResource( 9 )]
 
 [node name="Tutorial2" type="Node2D" parent="Level"]
 editor/display_folded = true
@@ -79,10 +83,10 @@ margin_left = -285.0
 margin_top = -31.5
 margin_right = 285.0
 margin_bottom = 31.5
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = "Simple, right?"
 align = 1
 valign = 1
 
-[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 8 )]
+[node name="Fade" parent="Level/Tutorial2" instance=ExtResource( 9 )]
 delayTime = 3.0

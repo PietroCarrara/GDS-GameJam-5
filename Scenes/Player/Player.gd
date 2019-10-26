@@ -13,6 +13,9 @@ func _ready():
 	emit_signal("PlayerColorChanged", $ColorSwitcher);
 
 	$ColorSwitcher.connect("ColorChanged", self, "colorChanged");
+	
+	self.collision_layer = 0;
+	self.collision_mask = 0;
 
 func _physics_process(delta):
 	var pos = position;
@@ -63,3 +66,7 @@ func getCharges():
 	
 func consumeCharge():
 	setCharges(getCharges()-1);
+
+func timerTimeout():
+	print('ayy');
+	$ColorSwitcher.setIsBlack(startsBlack);

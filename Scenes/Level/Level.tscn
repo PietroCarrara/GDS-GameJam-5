@@ -18,8 +18,8 @@ icon = ExtResource( 3 )
 stream = ExtResource( 4 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 639.719, 357.031 )
-scale = Vector2( 4.43439, 3.65817 )
+position = Vector2( 646.535, 363.847 )
+scale = Vector2( 4.48156, 3.72772 )
 z_index = -999
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
