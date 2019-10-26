@@ -26,3 +26,4 @@ func teleport(what, portal):
 	
 	what.position = where.position;
 	playerColor.switchColor();
+	

@@ -12,6 +12,8 @@ func bodyEntered(b):
 	# Player can't win if the back is black
 	if b.name == "Player" && !getWallColor().isBlack:
 		emit_signal("Win");
+		# remove goal from scene
+		self.call_deferred("free");
 
 func getWallColor():
 	var bodies = area.get_overlapping_bodies();
