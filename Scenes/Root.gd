@@ -7,18 +7,6 @@ func ChangeLevel(level):
 	self.add_child(tweenNewLevel);
 	self.add_child(tweenOldLevel);
 	
-	tweenOldLevel.connect(
-		"tween_all_completed",
-		self,
-		"removeChildren",
-		[ [tweenOldLevel, tweenOldLevel] ]
-	);
-	tweenNewLevel.connect(
-		"tween_all_completed",
-		self,
-		"removeChildren",
-		[ [tweenNewLevel] ]
-	);
 	
 	# Add the next level
 	var nextLevel = level.instance();
@@ -45,11 +33,25 @@ func ChangeLevel(level):
 		Tween.EASE_IN_OUT
 	);
 	
+	tweenOldLevel.connect(
+		"tween_all_completed",
+		self,
+		"removeChildren",
+		[ [tweenOldLevel, oldLevel] ]
+	);
+	tweenNewLevel.connect(
+		"tween_all_completed",
+		self,
+		"removeChildren",
+		[ [tweenNewLevel] ]
+	);
+	
 	tweenNewLevel.start();
 	tweenOldLevel.start();
 
 func removeChildren(children):
 	for child in children:
+		print(child)
 		self.remove_child(child);
 		child.call_deferred("free");
 

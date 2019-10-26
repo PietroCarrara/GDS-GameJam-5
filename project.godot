@@ -27,13 +27,13 @@ _global_script_class_icons={
 [application]
 
 config/name="AYYYYYY"
-run/main_scene="res://Scenes/Levels/Level2.tscn"
+run/main_scene="res://Scenes/Levels/Level-1.tscn"
 config/icon="res://Res/icon.png"
 
 [display]
 
 window/size/width=1280
-window/size/height=780
+window/size/height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

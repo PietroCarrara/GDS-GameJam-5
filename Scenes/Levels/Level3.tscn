@@ -12,7 +12,7 @@
 extents = Vector2( 228.302, 161.481 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 124.68, 393.027 )
+extents = Vector2( 124.68, 363.981 )
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
@@ -36,21 +36,20 @@ shape = SubResource( 1 )
 
 [node name="SwitchingWall3" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 230.88, 621.856 )
+position = Vector2( 230.88, 558.238 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall3"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall4" parent="Level" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 1050.28, 625.372 )
+position = Vector2( 1054.82, 557.21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall4"]
 shape = SubResource( 1 )
 
 [node name="SwitchingWall5" parent="Level" instance=ExtResource( 3 )]
-editor/display_folded = true
-position = Vector2( 640.583, 394.04 )
+position = Vector2( 640.583, 357.687 )
 startsBlack = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/SwitchingWall5"]
@@ -63,16 +62,15 @@ position = Vector2( 645.269, 627.092 )
 position = Vector2( 649.813, 122.692 )
 
 [node name="PortalPair" parent="Level" instance=ExtResource( 6 )]
-editor/display_folded = true
 
 [node name="Portal" parent="Level/PortalPair" instance=ExtResource( 7 )]
 position = Vector2( 645.269, 381.708 )
 
 [node name="Portal3" parent="Level/PortalPair" instance=ExtResource( 7 )]
-position = Vector2( 81.8228, 700.798 )
+position = Vector2( 81.8228, 637.18 )
 
 [node name="Portal4" parent="Level/PortalPair" instance=ExtResource( 7 )]
-position = Vector2( 1174.72, 692.603 )
+position = Vector2( 1179.26, 624.441 )
 
 [node name="Portal2" parent="Level/PortalPair" instance=ExtResource( 7 )]
 position = Vector2( 1207.69, 76.088 )
@@ -83,7 +81,7 @@ position = Vector2( 1207.69, 76.088 )
 position = Vector2( 900.769, 247.171 )
 
 [node name="Portal2" parent="Level/PortalPair2" instance=ExtResource( 7 )]
-position = Vector2( 373.946, 536.613 )
+position = Vector2( 373.946, 472.995 )
 
 [node name="Portal" parent="Level/PortalPair2" instance=ExtResource( 7 )]
 position = Vector2( 222.663, 177.222 )

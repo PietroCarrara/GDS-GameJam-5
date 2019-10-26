@@ -14,7 +14,7 @@ margin_right = 377.06
 margin_bottom = 45.2385
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "Optimal Bonus: [color=#f50]4[/color]"
-text = "Optimal Bonus: 4"
+bbcode_text = "Optimal Bonus: [color=#f50]0[/color]"
+text = "Optimal Bonus: 0"
 
 [node name="Fall" parent="." instance=ExtResource( 3 )]
