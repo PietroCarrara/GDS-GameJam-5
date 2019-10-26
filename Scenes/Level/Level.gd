@@ -36,13 +36,13 @@ func changeColors(n, except):
 		if (child.name == "ColorSwitcher"):
 			child.switchColor();
 
-# Should load a 'Contatulations!' UI into the scene
+# Should load a 'Congratulations!' UI into the scene
 # It must have the options:
 # 	- NextLevel
 # TODO: Only add element once
 func win():
 	var ui = winUI.instance();
-	ui.rect_size = Vector2(1024, 600);
+	ui.rect_size = Vector2(1280, 720);
 	ui.connect("NextLevelRequested", self, "nextLevelRequested");
 	self.add_child(ui);
 	print('You win!!!');
