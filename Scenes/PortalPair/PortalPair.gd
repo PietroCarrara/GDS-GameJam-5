@@ -1,21 +1,22 @@
 class_name PortalPair
 extends Node2D
 
-var portalA;
-var portalB;
+var portals = [];
 
 # Switch all colors of the scene
-signal SwitchAllExcept(n)
+signal SwitchAllExcept(n);
 
 func _ready():
 	var children = get_children();
-	portalA = children[0];
-	portalB = children[1];
+	children.invert();
+	for portal in children:
+		portals.append(portal);
+		portal.connect("Teleport", self, "teleport", [portal]);
 
-	portalA.connect("Teleport", self, "teleportFromAtoB")
-	portalB.connect("Teleport", self, "teleportFromBtoA")
-
-func teleport(what, where):
+func teleport(what, portal):
+	var index = portals.find(portal);
+	var where = portals[(index+1)%portals.size()]; # Get next portal, looping at 0
+	
 	var wallColor = where.getWall().get_node("ColorSwitcher");
 	var playerColor = what.get_node("ColorSwitcher");
 	
@@ -26,9 +27,3 @@ func teleport(what, where):
 	
 	what.position = where.position;
 	playerColor.switchColor();
-
-func teleportFromAtoB(player):
-	teleport(player, portalB);
-	
-func teleportFromBtoA(player):
-	teleport(player, portalA);
