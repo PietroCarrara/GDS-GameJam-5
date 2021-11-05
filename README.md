@@ -1,5 +1,5 @@
 # Negativo
-[itch.io](https://arnett.itch.io/negativo) - Submission to the 5th UFRGS gamejam
+[itch.io](https://pbcarrara.itch.io/) - Submission to the 5th UFRGS gamejam
 
 You can only walk on rooms that are not the same color as you... but you may change colors, and so can the rooms!
 
